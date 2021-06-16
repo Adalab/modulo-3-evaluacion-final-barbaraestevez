@@ -3,6 +3,7 @@ import "../stylesheets/index.scss";
 import "../stylesheets/App.scss";
 import getDataFromApi from "../services/API";
 import ls from "../services/local-storage";
+import Header from "./Header";
 import CharacterList from "./CharacterList";
 import Filters from "./Filters";
 
@@ -29,6 +30,7 @@ const App = () => {
 
   return (
     <div className="main__container">
+      <Header/>
       <main>
         <h1>Ricky and Morty</h1>
         <Filters/>
