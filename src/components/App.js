@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
+import { Route, Switch } from "react-router-dom";
 import "../stylesheets/index.scss";
 import "../stylesheets/App.scss";
 import getDataFromApi from "../services/API";
 import ls from "../services/local-storage";
 import Header from "./Header";
 import CharacterList from "./CharacterList";
+import CharacterDetail from "./CharacterDetail";
 import Filters from "./Filters";
 
 const App = () => {
@@ -63,20 +65,44 @@ const App = () => {
       if (filterSpecie === "") {
         return true;
       } else {
-        return character.species.toLowerCase().includes(filterSpecie.toLowerCase());
+        return character.species
+          .toLowerCase()
+          .includes(filterSpecie.toLowerCase());
       }
     });
   //     return filterSpecie === "" ? true : character.species === filterSpecie ;
 
+  const renderCharacterDetail = (props) => {
+    console.log('Router props', props);
+    const routeCharacterId = props.character.id;
+    const characterFound = characters.find(character => {
+      return character.id === routeCharacterId;
+    })
+    if(characterFound !== undefined) {
+      return <CharacterDetail character={characterFound} />;
+    } else {
+      <p>Personaje no encontrado</p>
+    }
+  }
+
   return (
-    <div className="main__container">
+    <>
+
       <Header />
-      <main>
-        <h1>Ricky and Morty</h1>
-        <Filters filterName={filterName} filterSpecie={filterSpecie} handleFilter={handleFilter} />
-        <CharacterList characters={filteredCharacters} />
-      </main>
-    </div>
+      <Switch>
+        <Route exact path="/">
+          <div className="main__container">
+            <Filters
+              filterName={filterName}
+              filterSpecie={filterSpecie}
+              handleFilter={handleFilter}
+            />
+            <CharacterList characters={filteredCharacters} />
+          </div>
+        </Route>
+        <Route exact path="/character/:id" render={renderCharacterDetail}/>
+      </Switch>
+    </>
   );
 };
 
