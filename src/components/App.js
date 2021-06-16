@@ -47,7 +47,6 @@ const App = () => {
 
   // event handlers
   const handleFilter = (data) => {
-    console.log(data);
     if (data.key === "name") {
       setFilterName(data.value);
     } else if (data.key === "species") {
