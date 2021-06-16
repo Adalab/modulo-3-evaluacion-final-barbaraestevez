@@ -4,6 +4,7 @@ import "../stylesheets/App.scss";
 import getDataFromApi from "../services/API";
 import ls from "../services/local-storage";
 import CharacterList from "./CharacterList";
+import Filters from "./Filters";
 
 
 const App = () => {
@@ -30,6 +31,7 @@ const App = () => {
     <div className="main__container">
       <main>
         <h1>Ricky and Morty</h1>
+        <Filters/>
         <CharacterList characters={characters}/>
       </main>
     </div>
