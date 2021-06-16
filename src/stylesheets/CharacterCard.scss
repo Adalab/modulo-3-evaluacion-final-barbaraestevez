@@ -1,9 +1,9 @@
-// .cards {
-//     display: flex;
-//     flex-direction: row;
-//     flex-wrap: wrap;
-//     list-style: none;
-//   }
+.cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    list-style: none;
+  }
   
   .card {
     display: flex;
@@ -14,11 +14,16 @@
     max-width: 7.5rem;
     border-radius: 0.5rem;
     background-color: white;
-    border: 0.1875rem solid #14d9c4;
+    border: 0.1875rem solid #f0e331;
     overflow: hidden;
     transition: 0.25s all;
     &__title,
     &__description {
         color: #fff;
+        // display: block;
+        // font-size: 1rem;
+    }
+    &__img {
+      width: 100%;
     }
   }

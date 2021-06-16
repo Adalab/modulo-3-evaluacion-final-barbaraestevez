@@ -1,14 +1,19 @@
-import React from 'react';
-import FilterByName from './FilterByName';
-import FilterBySpecie from './FilterBySpecie';
-
+import React from "react";
+import FilterByName from "./FilterByName";
+import FilterBySpecie from "./FilterBySpecie";
 
 const Filters = (props) => {
   return (
     <section>
       <form>
-        <FilterByName/>
-        <FilterBySpecie/>
+        <FilterByName
+          filterName={props.filterName}
+          handleFilter={props.handleFilter}
+        />
+        <FilterBySpecie
+          filterSpecie={props.filterSpecie}
+          handleFilter={props.handleFilter}
+        />
       </form>
     </section>
   );

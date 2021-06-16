@@ -1,5 +1,6 @@
 import React from 'react';
 //import { Link } from 'react-router-dom';
+import "../stylesheets/CharacterCard.scss";
 import CharacterCard from './CharacterCard';
 
 const CharacterList = props => {
