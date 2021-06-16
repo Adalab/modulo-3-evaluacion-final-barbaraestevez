@@ -1,14 +1,20 @@
 import React from "react";
 
-class CharacterCard extends React.Component {
+const CharacterCard = props => {
   
-  render() {
+  
     return (
-      <div>
-        <p className="">Texto</p>
-      </div>
+      <article className="card">
+        <img
+        className="card__img"
+        src={props.character.image}
+        alt={`Foto de ${props.character.name}`}
+        title={`Foto de ${props.character.name}`}
+        />
+        <h4 className="card__title">{props.character.name}</h4>
+        <p className="card__description">{props.character.species}</p>
+      </article>
     );
-  }
-}
+  };
 
 export default CharacterCard;

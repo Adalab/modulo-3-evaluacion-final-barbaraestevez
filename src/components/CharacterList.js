@@ -1,25 +1,20 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
+import CharacterCard from './CharacterCard';
 
-const CharacterList = () => {
+const CharacterList = props => {
+  const characterElements = props.characters.map(character => {
+    return ( 
+      <li key={character.id}> 
+      <CharacterCard character={character} />
+    </li>
+      );
+  })
   return (
-    <div className="">
-      <h1 className="title">XXX</h1>
-      <nav>
-        <ul className="nav__list">
-          <li className="nav__list--item">
-          <Link to="/counter">
-              Contador
-              </Link>
-          </li>
-          <li className="nav__list--item">
-          <Link to="/relax">
-              Relax
-              </Link>
-          </li>
-        </ul>
-      </nav>
-    </div>
+    <section>
+      <ul className="cards">{characterElements}</ul>
+    
+    </section>
   );
 };
 
