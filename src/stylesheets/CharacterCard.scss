@@ -1,25 +1,35 @@
 .cards {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+  margin: 50px;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+    // display: grid;
+    // grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    // gap: 25px;
     list-style: none;
+  }
+  .card__item {
+    margin: 0 auto;
   }
   
   .card {
-    display: flex;
-    flex-direction: row;
+    // display: flex;
+    // flex-direction: row;
     justify-content: space-between;
-    margin-right: 0.5rem;
-    margin-bottom: 0.5rem;
-    max-width: 7.5rem;
-    border-radius: 0.5rem;
-    background-color: white;
-    border: 0.1875rem solid #f0e331;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    max-width: 150px;
+    border-radius: 8px;
+    background-color: #01afc7;
+    border: 4px solid #dace22;
+    padding: 10px;
     overflow: hidden;
     transition: 0.25s all;
     &__title,
     &__description {
         color: #fff;
+        text-align: center;
+        text-decoration: none;
         // display: block;
         // font-size: 1rem;
     }

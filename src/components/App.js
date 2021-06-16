@@ -2,12 +2,14 @@ import React, { useState, useEffect } from "react";
 import { Route, Switch } from "react-router-dom";
 import "../stylesheets/index.scss";
 import "../stylesheets/App.scss";
+import "../stylesheets/Filters.scss";
 import getDataFromApi from "../services/API";
 import ls from "../services/local-storage";
 import Header from "./Header";
 import CharacterList from "./CharacterList";
 import CharacterDetail from "./CharacterDetail";
 import Filters from "./Filters";
+import Footer from "./Footer";
 
 const App = () => {
   // state
@@ -102,6 +104,7 @@ const App = () => {
         </Route>
         <Route exact path="/character/:id" render={renderCharacterDetail}/>
       </Switch>
+      <Footer/>
     </>
   );
 };

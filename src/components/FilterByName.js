@@ -1,3 +1,4 @@
+import "../stylesheets/Filters.scss";
 const FilterByName = (props) => {
   const handleChange = (ev) => {
     props.handleFilter({
@@ -5,8 +6,13 @@ const FilterByName = (props) => {
       value: ev.target.value,
     });
   };
+
+  const handleForm = (ev) => {
+    ev.preventDefault();
+  };
+
   return (
-    <>
+    <form onSubmit={handleForm}>
       <label className="form__label" htmlFor="name">
         Filtro por nombre
       </label>
@@ -18,7 +24,7 @@ const FilterByName = (props) => {
         value={props.filterName}
         onChange={handleChange}
       />
-    </>
+      </form>
   );
 };
 

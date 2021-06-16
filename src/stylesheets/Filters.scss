@@ -1,0 +1,21 @@
+.form__label {
+    display: inline-block;
+    margin: 15px;
+  }
+  .form__input {
+    display: inline-block;
+    margin: 15px;
+    &--text {
+      color: #fff;
+    }
+    &--select {
+      
+    }
+  }
+.section__filters {
+    width: auto;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
