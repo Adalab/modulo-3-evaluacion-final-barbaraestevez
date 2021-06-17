@@ -9,14 +9,15 @@ const FilterByStatus = (props) => {
     });
   };
 
-  const handleForm = (ev) => {
-    ev.preventDefault();
-  };
+  // const handleForm = (ev) => {
+  //   ev.preventDefault();
+  // };
 
   return (
-    <form onSubmit={handleForm}>
+    // <form onSubmit={handleForm}>
+    <>
       <label className="form__label" htmlFor="status">
-        Filtro por status
+        
       </label>
       <select
         className="form__input--select"
@@ -26,11 +27,11 @@ const FilterByStatus = (props) => {
         onChange={handleChange}
       >
         <option value="">Status</option>
-        <option value="alive">Alive</option>
-        <option value="dead">Dead</option>
+        <option value="Alive">Alive</option>
+        <option value="Dead">Dead</option>
         <option value="unknown">Unknown</option>
       </select>
-      </form>
+      </>
   );
 };
 

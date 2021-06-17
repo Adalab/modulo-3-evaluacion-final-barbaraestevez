@@ -15,9 +15,10 @@ import Footer from "./Footer";
 const App = () => {
   // state
   const [characters, setCharacters] = useState(ls.get("characters", []));
-  const [filterName, setFilterName] = useState(ls.get('filterName', ''));
+  const [filterName, setFilterName] = useState(ls.get('filterName', ""));
   const [filterSpecie, setFilterSpecie] = useState(ls.get("filterSpecie", ""));
   const [filterStatus, setFilterStatus] = useState(ls.get("filterStatus", ""));
+  console.log(characters);
 
   // effects
   useEffect(() => {
@@ -75,7 +76,7 @@ const App = () => {
     });
 
   const renderCharacterDetail = (props) => {
-    const routeCharacterId = parseInt(props.match.character.id);
+    const routeCharacterId = parseInt(props.match.params.id);
     const characterFound = characters.find((character) => {
       return character.id === routeCharacterId;
     })
@@ -85,7 +86,7 @@ const App = () => {
       return(
         <>
         <Link to="/">Volver</Link>
-        <p>Personaje no encontrado</p>
+        <p className="not-found">Personaje no encontrado</p>
         </>
 
       ) 
@@ -108,6 +109,12 @@ const App = () => {
           </div>
         </Route>
         <Route exact path="/character/:id" render={renderCharacterDetail}/>
+        <Route>
+        <>
+        <Link to="/">Volver</Link>
+        <p className="not-found">Personaje no encontrado</p>
+        </>
+        </Route>
       </Switch>
       <Footer/>
     </>

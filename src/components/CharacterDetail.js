@@ -16,6 +16,8 @@ const CharacterDetail = props => {
             <li>Nombre: {props.character.name}</li>
             <li>Especie: {props.character.species}</li>
             <li>Status: {props.character.status}</li>
+            <li>Origin: {props.character.origin}</li>
+            <li>Episodes: {props.character.episode.length}</li>
           </ul>
         </section>
       </div>

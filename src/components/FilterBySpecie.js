@@ -8,14 +8,14 @@ const FilterBySpecie = (props) => {
       key: "species",
     });
   };
-  const handleForm = (ev) => {
-    ev.preventDefault();
-  };
+  // const handleForm = (ev) => {
+  //   ev.preventDefault();
+  // };
   return (
-    <form onSubmit={handleForm}>
+    // <form onSubmit={handleForm}>
+    <>
       <label className="form__label" htmlFor="specie">
-        Filtrar por especie:
-      </label>
+       </label>
       <select
         className="form__input--select"
         name="species"
@@ -23,11 +23,11 @@ const FilterBySpecie = (props) => {
         value={props.filterSpecie}
         onChange={handleChange}
       >
-        <option value="">Todos</option>
+        <option value="">Especie</option>
         <option value="human">Human</option>
         <option value="alien">Alien</option>
       </select>
-    </form>
+    </>
   );
 };
 

@@ -11,8 +11,10 @@ const getDataFromApi = () => {
               name: character.name,
               species: character.species,
               id: character.id,
-          //  gender: character.gender,
-          //  status: character.status,
+              status: character.status,
+              gender: character.gender,
+              origin: character.origin.name,
+              episode: character.episode
             };
           });
           return cleanData;

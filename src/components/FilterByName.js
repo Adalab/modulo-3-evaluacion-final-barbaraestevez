@@ -7,24 +7,24 @@ const FilterByName = (props) => {
     });
   };
 
-  const handleForm = (ev) => {
-    ev.preventDefault();
-  };
+  // const handleForm = (ev) => {
+  //   ev.preventDefault();
+  // };
 
   return (
-    <form onSubmit={handleForm}>
+    <>
       <label className="form__label" htmlFor="name">
-        Filtro por nombre
       </label>
       <input
         className="form__input--text"
         id="name"
         name="name"
         type="text"
+        placeholder="Busca tu personaje..."
         value={props.filterName}
         onChange={handleChange}
       />
-      </form>
+   </>
   );
 };
 

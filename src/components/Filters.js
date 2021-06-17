@@ -4,8 +4,12 @@ import FilterBySpecie from "./FilterBySpecie";
 import FilterByStatus from "./FilterByStatus";
 
 const Filters = (props) => {
+  const handleForm = (ev) => {
+    ev.preventDefault();
+  };
   return (
     <section className="section__filters">
+    <form className="form" onSubmit={handleForm}>
       <FilterByName
         filterName={props.filterName}
         handleFilter={props.handleFilter}
@@ -18,6 +22,7 @@ const Filters = (props) => {
         filterStatus={props.filterStatus}
         handleFilter={props.handleFilter}
       />
+      </form>
     </section>
   );
 };
