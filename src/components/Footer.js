@@ -9,6 +9,7 @@ const Footer = () => {
           href="https://github.com/barbaraestevez"
           title="GitHub de Bárbara Estévez"
           target="_blank"
+          rel="noreferrer"
         >
            Bárbara Estévez Simonet
         </a>

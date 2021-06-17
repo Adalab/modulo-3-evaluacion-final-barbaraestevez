@@ -1,6 +1,7 @@
 import React from "react";
 import FilterByName from "./FilterByName";
 import FilterBySpecie from "./FilterBySpecie";
+import FilterByStatus from "./FilterByStatus";
 
 const Filters = (props) => {
   return (
@@ -11,6 +12,10 @@ const Filters = (props) => {
       />
       <FilterBySpecie
         filterSpecie={props.filterSpecie}
+        handleFilter={props.handleFilter}
+      />
+      <FilterByStatus
+        filterStatus={props.filterStatus}
         handleFilter={props.handleFilter}
       />
     </section>

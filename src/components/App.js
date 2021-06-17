@@ -5,6 +5,7 @@ import "../stylesheets/App.scss";
 import "../stylesheets/Filters.scss";
 import getDataFromApi from "../services/API";
 import ls from "../services/local-storage";
+import { Link } from "react-router-dom";
 import Header from "./Header";
 import CharacterList from "./CharacterList";
 import CharacterDetail from "./CharacterDetail";
@@ -14,8 +15,9 @@ import Footer from "./Footer";
 const App = () => {
   // state
   const [characters, setCharacters] = useState(ls.get("characters", []));
-  const [filterName, setFilterName] = useState(/*ls.get('filterName', '')*/ "");
+  const [filterName, setFilterName] = useState(ls.get('filterName', ''));
   const [filterSpecie, setFilterSpecie] = useState(ls.get("filterSpecie", ""));
+  const [filterStatus, setFilterStatus] = useState(ls.get("filterStatus", ""));
 
   // effects
   useEffect(() => {
@@ -24,11 +26,7 @@ const App = () => {
       getDataFromApi().then((charactersData) => {
         setCharacters(charactersData);
       });
-  });
-  // }, []); parámetro que nos indica cuándo se debe ejecutar el useEffect
-  // que lo he quitado porque en consola me salía este warning:
-  // Line 25:8:  React Hook useEffect has a missing dependency: 'characters.length'.
-  // Either include it or remove the dependency array  react-hooks/exhaustive-deps
+  }, []);
 
   // guardamos datos en localstorage
   useEffect(() => {
@@ -43,11 +41,9 @@ const App = () => {
     ls.set("filterSpecie", filterSpecie);
   }, [filterSpecie]);
 
-  // useEffect(() => {
-  //   ls.set("characters", characters);
-  //   ls.set("filterName", filterName);
-  //   ls.set("filterSpecie", filterSpecie);
-  // }, [characters, filterName, filterSpecie]);
+  useEffect(() => {
+    ls.set("filterStatus", filterStatus);
+  }, [filterStatus]);
 
   // event handlers
   const handleFilter = (data) => {
@@ -55,7 +51,9 @@ const App = () => {
       setFilterName(data.value);
     } else if (data.key === "species") {
       setFilterSpecie(data.value);
-    }
+    } else if (data.key === "status") {
+      setFilterStatus(data.value);
+    } 
   };
 
   //render
@@ -71,19 +69,26 @@ const App = () => {
           .toLowerCase()
           .includes(filterSpecie.toLowerCase());
       }
+    })
+    .filter((character) => {
+      return filterStatus === "" ? true : character.status === filterStatus ;
     });
-  //     return filterSpecie === "" ? true : character.species === filterSpecie ;
 
   const renderCharacterDetail = (props) => {
-    console.log('Router props', props);
-    const routeCharacterId = props.character.id;
-    const characterFound = characters.find(character => {
+    const routeCharacterId = parseInt(props.match.character.id);
+    const characterFound = characters.find((character) => {
       return character.id === routeCharacterId;
     })
     if(characterFound !== undefined) {
       return <CharacterDetail character={characterFound} />;
     } else {
-      <p>Personaje no encontrado</p>
+      return(
+        <>
+        <Link to="/">Volver</Link>
+        <p>Personaje no encontrado</p>
+        </>
+
+      ) 
     }
   }
 

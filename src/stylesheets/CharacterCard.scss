@@ -13,8 +13,6 @@
   }
   
   .card {
-    // display: flex;
-    // flex-direction: row;
     justify-content: space-between;
     margin-right: 8px;
     margin-bottom: 8px;
@@ -25,15 +23,26 @@
     padding: 10px;
     overflow: hidden;
     transition: 0.25s all;
-    &__title,
-    &__description {
-        color: #fff;
-        text-align: center;
-        text-decoration: none;
-        // display: block;
-        // font-size: 1rem;
-    }
     &__img {
       width: 100%;
     }
   }
+.card__title {
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+}
+.card__description {
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+}
+.card__title,
+.card__description {
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  a:link, 
+  a:visited,
+  a:active {
+    text-decoration: none;
+  }
+}
