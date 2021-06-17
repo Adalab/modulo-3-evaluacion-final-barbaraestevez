@@ -1,4 +1,4 @@
-import "../stylesheets/Filters.scss";
+
 const FilterByName = (props) => {
   const handleChange = (ev) => {
     props.handleFilter({
@@ -6,10 +6,6 @@ const FilterByName = (props) => {
       value: ev.target.value,
     });
   };
-
-  // const handleForm = (ev) => {
-  //   ev.preventDefault();
-  // };
 
   return (
     <>

@@ -1,5 +1,4 @@
 import React from "react";
-import "../stylesheets/Filters.scss";
 
 const FilterByStatus = (props) => {
   const handleChange = (ev) => {
@@ -9,12 +8,7 @@ const FilterByStatus = (props) => {
     });
   };
 
-  // const handleForm = (ev) => {
-  //   ev.preventDefault();
-  // };
-
   return (
-    // <form onSubmit={handleForm}>
     <>
       <label className="form__label" htmlFor="status">
         

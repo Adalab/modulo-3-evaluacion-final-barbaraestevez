@@ -36,5 +36,6 @@
 .section__filters {
   width: auto;
   margin: auto;
- 
+  display: flex;
+  justify-content: center;
 }

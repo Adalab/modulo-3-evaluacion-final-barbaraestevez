@@ -1,5 +1,4 @@
 import React from "react";
-import "../stylesheets/Filters.scss";
 
 const FilterBySpecie = (props) => {
   const handleChange = (ev) => {
@@ -8,11 +7,8 @@ const FilterBySpecie = (props) => {
       key: "species",
     });
   };
-  // const handleForm = (ev) => {
-  //   ev.preventDefault();
-  // };
+
   return (
-    // <form onSubmit={handleForm}>
     <>
       <label className="form__label" htmlFor="specie">
        </label>

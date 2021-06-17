@@ -1,9 +1,8 @@
-import "../stylesheets/Footer.scss";
 const Footer = () => {
   return (
     <footer className="footer">
       <small className="footer__text">
-        &copy; 2021 
+        &copy; 2021
         <a
           className="footer__link"
           href="https://github.com/barbaraestevez"
@@ -11,7 +10,7 @@ const Footer = () => {
           target="_blank"
           rel="noreferrer"
         >
-           Bárbara Estévez Simonet
+          Bárbara Estévez Simonet
         </a>
       </small>
     </footer>

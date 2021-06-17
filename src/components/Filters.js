@@ -9,19 +9,19 @@ const Filters = (props) => {
   };
   return (
     <section className="section__filters">
-    <form className="form" onSubmit={handleForm}>
-      <FilterByName
-        filterName={props.filterName}
-        handleFilter={props.handleFilter}
-      />
-      <FilterBySpecie
-        filterSpecie={props.filterSpecie}
-        handleFilter={props.handleFilter}
-      />
-      <FilterByStatus
-        filterStatus={props.filterStatus}
-        handleFilter={props.handleFilter}
-      />
+      <form className="form" onSubmit={handleForm}>
+        <FilterByName
+          filterName={props.filterName}
+          handleFilter={props.handleFilter}
+        />
+        <FilterBySpecie
+          filterSpecie={props.filterSpecie}
+          handleFilter={props.handleFilter}
+        />
+        <FilterByStatus
+          filterStatus={props.filterStatus}
+          handleFilter={props.handleFilter}
+        />
       </form>
     </section>
   );

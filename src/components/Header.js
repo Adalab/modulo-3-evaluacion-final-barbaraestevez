@@ -5,6 +5,7 @@ function Header() {
     return(
         <header className="header">
             <img className="logo" src={logo} alt="logo" title="logo Rick and Morty"/>
+            <h1 className="h1">Rick and Morty</h1>
         </header>
     )
 }

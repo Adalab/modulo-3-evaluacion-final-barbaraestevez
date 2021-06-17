@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Route, Switch } from "react-router-dom";
-import "../stylesheets/index.scss";
-import "../stylesheets/App.scss";
-import "../stylesheets/Filters.scss";
 import getDataFromApi from "../services/API";
 import ls from "../services/local-storage";
 import { Link } from "react-router-dom";

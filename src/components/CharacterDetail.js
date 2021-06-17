@@ -5,8 +5,7 @@ const CharacterDetail = props => {
   return (
     <main class="card__detail--main">
       <div className="card__detail">
-          Detalle del personaje
-        <Link to="/">Volver</Link>
+        <Link className="link__to" to="/">Volver</Link>
         <header>
           <h2 className="card__detail--title">{props.character.name}</h2>
         </header>

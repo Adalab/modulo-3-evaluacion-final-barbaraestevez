@@ -1,10 +1,6 @@
 .main__container{
   width: 100%;
   min-height: 100vh;
-  display: flex;
-  flex-direction:column;
-  align-items: center;
-  justify-content: center;
   background-color: rgb(115, 192, 198);
 }
 
@@ -13,4 +9,12 @@
   margin: 0;
   padding-bottom: 20px;
   color: #fff;
+}
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.h1 {
+  display: none;
 }
