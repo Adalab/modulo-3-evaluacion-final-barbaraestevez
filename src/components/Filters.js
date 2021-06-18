@@ -2,6 +2,7 @@ import React from "react";
 import FilterByName from "./FilterByName";
 import FilterBySpecie from "./FilterBySpecie";
 import FilterByStatus from "./FilterByStatus";
+import FilterByOrigin from "./FilterByOrigin";
 
 const Filters = (props) => {
   const handleForm = (ev) => {
@@ -20,6 +21,10 @@ const Filters = (props) => {
         />
         <FilterByStatus
           filterStatus={props.filterStatus}
+          handleFilter={props.handleFilter}
+        />
+        <FilterByOrigin
+          filterOrigin={props.filterOrigin}
           handleFilter={props.handleFilter}
         />
       </form>

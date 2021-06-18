@@ -15,7 +15,8 @@ const App = () => {
   const [filterName, setFilterName] = useState(ls.get('filterName', ""));
   const [filterSpecie, setFilterSpecie] = useState(ls.get("filterSpecie", ""));
   const [filterStatus, setFilterStatus] = useState(ls.get("filterStatus", ""));
-  console.log(characters);
+  const [filterOrigin, setFilterOrigin] = useState(ls.get("filterOrigin", ""));
+  
 
   // effects
   useEffect(() => {
@@ -42,6 +43,9 @@ const App = () => {
   useEffect(() => {
     ls.set("filterStatus", filterStatus);
   }, [filterStatus]);
+  useEffect(() => {
+    ls.set("filterOrigin", filterOrigin);
+  }, [filterOrigin]);
 
   // event handlers
   const handleFilter = (data) => {
@@ -51,6 +55,8 @@ const App = () => {
       setFilterSpecie(data.value);
     } else if (data.key === "status") {
       setFilterStatus(data.value);
+    } else if (data.key === "origin") {
+      setFilterOrigin(data.value);
     } 
   };
 
@@ -70,6 +76,9 @@ const App = () => {
     })
     .filter((character) => {
       return filterStatus === "" ? true : character.status === filterStatus ;
+    })
+    .filter((character) => {
+      return character.origin.toLowerCase().includes(filterOrigin.toLowerCase());
     });
 
   const renderCharacterDetail = (props) => {
